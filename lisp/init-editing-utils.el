@@ -47,7 +47,7 @@
   (windmove-default-keybindings)
   (fset 'yes-or-no-p 'y-or-n-p))
 
-(wk-misc-custom-init)
+(wk-misc-init)
 
 
 ;; BEGIN: his-match-paren
