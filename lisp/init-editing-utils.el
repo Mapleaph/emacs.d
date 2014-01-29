@@ -1,5 +1,6 @@
 (setq-default blink-cursor-delay 0
               blink-cursor-interval 0.4
+              vc-handled-backends nil
               visible-bell t
               compilation-scroll-output t
               grep-scroll-output t
@@ -43,7 +44,7 @@
 
   (add-hook 'before-save-hook 'whitespace-cleanup)
 
-  (delete 'Git vc-handled-backends)
+  ;;(delete 'Git vc-handled-backends)
   (windmove-default-keybindings)
   (fset 'yes-or-no-p 'y-or-n-p))
 
