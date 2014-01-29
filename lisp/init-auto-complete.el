@@ -1,6 +1,15 @@
 (add-to-list 'load-path (expand-file-name "site-lisp/auto-complete" user-emacs-directory))
 (require 'auto-complete-config)
+(global-auto-complete-mode t)
+
+(setq-default ac-expand-on-auto-complete nil)
+(setq-default ac-auto-start nil)
+(setq-default ac-dwim nil)
+
+(setq tab-always-indent 'complete)
+
+(add-to-list 'completion-styles 'initials t)
+
 (add-to-list 'ac-dictionary-directories (expand-file-name "site-lisp/auto-complete/dict" user-emacs-directory))
-(ac-config-default)
 
 (provide 'init-auto-complete)
