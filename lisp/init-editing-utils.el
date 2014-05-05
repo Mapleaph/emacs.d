@@ -33,7 +33,7 @@
 (defun wk-misc-init ()
   (global-linum-mode)
   (show-paren-mode)
-  (electric-pair-mode)
+;;  (electric-pair-mode)
   (icomplete-mode)
   (auto-image-file-mode)
   (mouse-avoidance-mode 'animate)
@@ -66,6 +66,16 @@
 (global-set-key "%" 'his-match-paren)
 ;; END: his-match-paren
 
+
+;; BEGIN: c-mode-skeleton-pair-hook
+(defun c-mode-skeleton-pair-hook()
+  (setq-default skeleton-pair t)
+  (global-set-key (kbd "(") 'skeleton-pair-insert-maybe)
+  (global-set-key (kbd "\"") 'skeleton-pair-insert-maybe)
+  (global-set-key (kbd "\'") 'skeleton-pair-insert-maybe)
+  (global-set-key (kbd "[") 'skeleton-pair-insert-maybe)
+  (global-set-key (kbd "{") 'skeleton-pair-insert-maybe))
+;; END: c-mode-skeleton-pair-hook
 
 ;; BEGIN: auto-indent-region when yank a piece of code
 (dolist (command '(yank yank-pop))

@@ -7,6 +7,7 @@
 (require 'init-exec-path)
 (require 'init-themes)
 (require 'init-org)
+(require 'init-mobileOrg)
 (require 'init-auto-complete)
 (require 'init-dired)
 (require 'init-w3m)
@@ -14,7 +15,7 @@
 (require 'init-org2blog)
 (require 'init-markdown)
 (require 'init-elpa)
-
+(require 'init-google-c-style)
 
 ;; BEGIN: wk-key-init
 (defun wk-key-init()
@@ -41,14 +42,16 @@
 
 
 ;; BEGIN: wk-c-mode-common-hook
+
 (defun wk-c-mode-common-hook()
-  (c-set-style "lgfang")
-  (setq-default c-basic-offset 4
-                tab-width 4
-                indent-tabs-mode nil)
+;;  (setq c-default-style "awk")
+  (setq c-basic-offset 4
+        indent-tabs-mode nil)
   (c-toggle-auto-hungry-state t)
   (define-key c-mode-base-map [(return)] 'newline-and-indent))
 (add-hook 'c-mode-common-hook 'wk-c-mode-common-hook)
+(add-hook 'c-mode-common-hook 'google-set-c-style)
+(add-hook 'c-mode-common-hook 'c-mode-skeleton-pair-hook)
 ;; END: wk-c-mode-common-hook
 
 
