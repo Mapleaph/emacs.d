@@ -1,3 +1,63 @@
+2014-07-22  Tassilo Horn  <tsdh@gnu.org>
+
+	release 11.87.7
+
+2014-07-22  Tassilo Horn  <tsdh@gnu.org>
+
+	Highlighting fix for bib-cite.el
+
+	* bib-cite.el (bib-highlight-mouse): Change regexp to cope with 
+	multiple optional arguments of a macro.
+
+2014-07-14  Tassilo Horn  <tsdh@gnu.org>
+
+	Release 11.87.6
+
+2014-07-14  Tassilo Horn  <tsdh@gnu.org>
+
+	Fix date format.
+
+2014-05-23  Tassilo Horn  <tsdh@gnu.org>
+
+	Release 11.87.5.
+
+2014-05-16  Stefan Monnier  <monnier@iro.umontreal.ca>
+
+	* tex-site.el (TeX-modes-set): Use advice-add if available.
+	* font-latex.el (font-latex-make-sectioning-faces): Don't rely on 
+	dynamic scoping for `num'.
+	(font-latex-make-built-in-keywords): Don't use `eval' needlessly.
+	(font-latex-doctex-syntactic-keywords): Declare before first use.
+	(font-latex-match-command-with-arguments): Stay away from `add-to-list'
+	on let-bound variables.
+	(font-latex-match-command-in-braces): Remove unused var `end'.
+
+2014-04-06  Tassilo Horn  <tsdh@gnu.org>
+
+	Bump to 11.87.4
+
+2014-04-06  Tassilo Horn  <tsdh@gnu.org>
+
+	texinfo updates
+
+2014-02-26  Tassilo Horn  <tsdh@gnu.org>
+
+	Bump to 11.87.3.
+
+2014-02-26  Tassilo Horn  <tsdh@gnu.org>
+
+	Update font-latex.el to curren AUCTeX git version.
+
+	Fixes bug#16879.
+
+2014-01-30  Stefan Monnier  <monnier@iro.umontreal.ca>
+
+	* auctex.el: Add copyright notice.
+
+2014-01-29  Stefan Monnier  <monnier@iro.umontreal.ca>
+
+	Move metadata to autex.el; Remove auctex-pkg.el
+
 2013-10-11  Stefan Monnier  <monnier@iro.umontreal.ca>
 
 	Regenerate "dir" in English.

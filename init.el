@@ -7,15 +7,10 @@
 (require 'init-exec-path)
 (require 'init-themes)
 (require 'init-org)
-(require 'init-mobileOrg)
 (require 'init-auto-complete)
 (require 'init-dired)
-(require 'init-w3m)
-(require 'init-weibo)
-(require 'init-org2blog)
 (require 'init-markdown)
 (require 'init-elpa)
-(require 'init-google-c-style)
 
 ;; BEGIN: wk-key-init
 (defun wk-key-init()
@@ -44,36 +39,37 @@
 ;; BEGIN: wk-c-mode-common-hook
 
 (defun wk-c-mode-common-hook()
+  (c-set-style "K&R")
 ;;  (setq c-default-style "awk")
   (setq c-basic-offset 4
-        indent-tabs-mode nil)
+		indent-tabs-mode t)
   (c-toggle-auto-hungry-state t)
   (define-key c-mode-base-map [(return)] 'newline-and-indent))
 (add-hook 'c-mode-common-hook 'wk-c-mode-common-hook)
-(add-hook 'c-mode-common-hook 'google-set-c-style)
+;; (add-hook 'c-mode-common-hook 'google-set-c-style)
 (add-hook 'c-mode-common-hook 'c-mode-skeleton-pair-hook)
 ;; END: wk-c-mode-common-hook
 
 
 ;; BEGIN: auctex
 (mapc (lambda (mode)
-        (add-hook 'LaTeX-mode-hook mode))
-      (list 'LaTeX-math-mode
-            'turn-on-reftex
-            'linum-mode))
+		(add-hook 'LaTeX-mode-hook mode))
+	  (list 'LaTeX-math-mode
+			'turn-on-reftex
+			'linum-mode))
 
 (add-hook 'LaTeX-mode-hook
-          '(lambda ()
-             (add-to-list 'TeX-command-list '("XeLaTeX" "%`xelatex%(mode)%' %t" TeX-run-TeX nil t))
-             (setq TeX-command-default "XeLaTeX")
-             (setq TeX-save-query nil)
-             (setq TeX-show-compilation t)
-             (setq TeX-auto-untabify t
-                   TeX-engine 'xetex)
-             (TeX-global-PDF-mode t)
-             (imenu-add-menubar-index)
-             (define-key LaTeX-mode-map (kbd "TAB") 'TeX-complete-symbol)
-             ))
+		  '(lambda ()
+			 (add-to-list 'TeX-command-list '("XeLaTeX" "%`xelatex%(mode)%' %t" TeX-run-TeX nil t))
+			 (setq TeX-command-default "XeLaTeX")
+			 (setq TeX-save-query nil)
+			 (setq TeX-show-compilation t)
+			 (setq TeX-auto-untabify t
+				   TeX-engine 'xetex)
+			 (TeX-global-PDF-mode t)
+			 (imenu-add-menubar-index)
+			 (define-key LaTeX-mode-map (kbd "TAB") 'TeX-complete-symbol)
+			 ))
 ;; END: auctex
 
 
@@ -150,13 +146,13 @@
 (setq islamic-holidays nil)
 (setq solar-holidays nil)
 (setq general-holidays '((holiday-fixed 1 1 "元旦")
-                         (holiday-fixed 2 14 "情人节")
-                         (holiday-fixed 5 1 "劳动节")
-                         (holiday-float 5 0 2 "母亲节")
-                         (holiday-float 6 0 3 "父亲节")
-                         (holiday-fixed 9 10 "教师节")
-                         (holiday-fixed 10 1 "国庆节")
-                         (holiday-fixed 12 25 "圣诞节")))
+						 (holiday-fixed 2 14 "情人节")
+						 (holiday-fixed 5 1 "劳动节")
+						 (holiday-float 5 0 2 "母亲节")
+						 (holiday-float 6 0 3 "父亲节")
+						 (holiday-fixed 9 10 "教师节")
+						 (holiday-fixed 10 1 "国庆节")
+						 (holiday-fixed 12 25 "圣诞节")))
 ;; END: calendar
 
 
