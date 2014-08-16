@@ -2,9 +2,9 @@
 (require 'auto-complete-config)
 (global-auto-complete-mode t)
 
-(setq-default ac-expand-on-auto-complete nil)
-(setq-default ac-auto-start nil)
-(setq-default ac-dwim nil)
+(setq-default ac-expand-on-auto-complete t)
+(setq-default ac-auto-start t)
+(setq-default ac-dwim t)
 
 (setq tab-always-indent 'complete)
 
