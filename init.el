@@ -11,6 +11,7 @@
 (require 'init-dired)
 (require 'init-markdown)
 (require 'init-elpa)
+(require 'init-xcscope)
 
 ;; BEGIN: wk-key-init
 (defun wk-key-init()
