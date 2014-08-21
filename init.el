@@ -32,6 +32,8 @@
   (define-key global-map [(f1)] 'delete-other-windows)
   ;; key binding for elisp-index-search
   (global-set-key (kbd "<f8>") 'elisp-index-search))
+  ;; hs-mode toggling
+  (global-set-key (kbd "<f7>") 'hs-toggle-hiding)
 
 (wk-key-init)
 ;; END: wk-key-init
@@ -49,6 +51,7 @@
 (add-hook 'c-mode-common-hook 'wk-c-mode-common-hook)
 ;; (add-hook 'c-mode-common-hook 'google-set-c-style)
 (add-hook 'c-mode-common-hook 'c-mode-skeleton-pair-hook)
+(add-hook 'c-mode-common-hook 'hs-minor-mode)
 ;; END: wk-c-mode-common-hook
 
 
