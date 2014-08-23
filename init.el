@@ -12,6 +12,7 @@
 (require 'init-markdown)
 (require 'init-elpa)
 (require 'init-xcscope)
+(require 'init-etags)
 
 ;; BEGIN: wk-key-init
 (defun wk-key-init()
