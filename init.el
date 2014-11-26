@@ -13,6 +13,7 @@
 (require 'init-elpa)
 (require 'init-xcscope)
 (require 'init-etags)
+(require 'init-useful-utils)
 
 ;; BEGIN: wk-key-init
 (defun wk-key-init()
